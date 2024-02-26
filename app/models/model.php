@@ -1,6 +1,6 @@
 <?php
 
-namespace model;
+namespace Models;
 
 use mysqli;
 
@@ -9,6 +9,7 @@ class Model
     protected $connection;
     protected $table;
     protected $result;
+    protected $fillable = [];
 
     /**
      * Costruttore della classe.
@@ -107,7 +108,7 @@ class Model
      *
      * @param array $data Un array associativo dei dati da aggiornare, con i nomi delle colonne come chiavi e i nuovi valori dei dati come valori.
      * @param int $id L'ID del record da aggiornare.
-     * @return object Restituisce l'istanza corrente della classe per consentire la concatenazione dei metodi.
+     * @return bool Restituisce TRUE se l'aggiornamento ha avuto successo, altrimenti FALSE.
      */
     public function update($data, $id)
     {
